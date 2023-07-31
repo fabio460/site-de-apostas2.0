@@ -104,7 +104,7 @@ export default function Tabela() {
                 </TableCell>
                 <TableCell align="left" component="th" scope="row">
                   <div className='resultadoItem'>
-                    <Card key={row.id+"casa"} className={`card card${row.id} cardActive`}  onClick={e=> handleClick(e, {
+                    <div key={row.id+"casa"} className={`card card${row.id} cardActive`}  onClick={e=> handleClick(e, {
                       id:row.id,
                       option:row.id+"casa",
                       hora:row.hora,
@@ -117,8 +117,8 @@ export default function Tabela() {
                     }, row.id+"casa")} >
                       <div>{row.odiCasa}</div>
                       <div>{row.casa}</div>
-                    </Card>
-                    <Card key={row.id+"empate"} className={`card card${row.id}`} onClick={e=> handleClick(e, {
+                    </div>
+                    <div key={row.id+"empate"} className={`card card${row.id}`} onClick={e=> handleClick(e, {
                       id:row.id,
                       option:row.id+"empate",
                       hora:row.hora,
@@ -132,8 +132,8 @@ export default function Tabela() {
                     }, row.id+"empate")}>
                       <div>{row.odiEmpate}</div>
                       <div>Empate</div>
-                    </Card>
-                    <Card key={row.id+"fora"} className={`card card${row.id}`} onClick={e=> handleClick(e, {
+                    </div>
+                    <div key={row.id+"fora"} className={`card card${row.id}`} onClick={e=> handleClick(e, {
                       id:row.id,
                       option:row.id+"fora",
                       hora:row.hora,
@@ -147,7 +147,7 @@ export default function Tabela() {
                     }, row.id+"fora")}>
                       <div>{row.odiFora}</div>
                       <div>{row.fora}</div>
-                    </Card>
+                    </div>
                   </div>
                 </TableCell>
               </TableRow>

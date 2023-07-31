@@ -76,80 +76,85 @@ export default function Tabela() {
 
   console.log(selected)
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Hora</TableCell>
-            <TableCell align="left">Duelos</TableCell>
-            <TableCell align="center">Resultado</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.casa}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell >
-                  {row.hora}
-              </TableCell>
-              <TableCell align="left">
-                <div>{row.casa}</div>
-                <div>{row.fora}</div>
-              </TableCell>
-              <TableCell align="left" component="th" scope="row">
-                <div className='resultadoItem'>
-                  <Card key={row.id+"casa"} className={`card card${row.id} text-red-50`}  onClick={e=> handleClick(e, {
-                    id:row.id,
-                    option:row.id+"casa",
-                    hora:row.hora,
-                    casa: row.casa,
-                    fora: row.fora,
-                    odiCasa:row.odiFora,
-                    odiFora:row.odiFora,
-                    odiEmpate:row.odiEmpate,
-                    select:true
-                  }, row.id+"casa")} >
-                    <div>{row.odiCasa}</div>
-                    <div>{row.casa}</div>
-                  </Card>
-                  <Card key={row.id+"empate"} className={`card card${row.id}`} onClick={e=> handleClick(e, {
-                    id:row.id,
-                    option:row.id+"empate",
-                    hora:row.hora,
-                    casa: row.casa,
-                    fora: row.fora,
-                    odiCasa:row.odiFora,
-                    odiFora:row.odiFora,
-                    odiEmpate:row.odiEmpate,
-                    select:true
-
-                  }, row.id+"empate")}>
-                    <div>{row.odiEmpate}</div>
-                    <div>Empate</div>
-                  </Card>
-                  <Card key={row.id+"fora"} className={`card card${row.id}`} onClick={e=> handleClick(e, {
-                    id:row.id,
-                    option:row.id+"fora",
-                    hora:row.hora,
-                    casa: row.casa,
-                    fora: row.fora,
-                    odiCasa:row.odiFora,
-                    odiFora:row.odiFora,
-                    odiEmpate:row.odiEmpate,
-                    select:true
-
-                  }, row.id+"fora")}>
-                    <div>{row.odiFora}</div>
-                    <div>{row.fora}</div>
-                  </Card>
-                </div>
-              </TableCell>
+    <div>
+      <div className='red'>red</div>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Hora</TableCell>
+              <TableCell align="left">Duelos</TableCell>
+              <TableCell align="center">Resultado</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+          <div className='red'>red</div>
+
+            {rows.map((row) => (
+              <TableRow
+                key={row.casa}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell >
+                    {row.hora}
+                </TableCell>
+                <TableCell align="left">
+                  <div>{row.casa}</div>
+                  <div>{row.fora}</div>
+                </TableCell>
+                <TableCell align="left" component="th" scope="row">
+                  <div className='resultadoItem'>
+                    <Card key={row.id+"casa"} className={`card card${row.id} cardActive`}  onClick={e=> handleClick(e, {
+                      id:row.id,
+                      option:row.id+"casa",
+                      hora:row.hora,
+                      casa: row.casa,
+                      fora: row.fora,
+                      odiCasa:row.odiFora,
+                      odiFora:row.odiFora,
+                      odiEmpate:row.odiEmpate,
+                      select:true
+                    }, row.id+"casa")} >
+                      <div>{row.odiCasa}</div>
+                      <div>{row.casa}</div>
+                    </Card>
+                    <Card key={row.id+"empate"} className={`card card${row.id}`} onClick={e=> handleClick(e, {
+                      id:row.id,
+                      option:row.id+"empate",
+                      hora:row.hora,
+                      casa: row.casa,
+                      fora: row.fora,
+                      odiCasa:row.odiFora,
+                      odiFora:row.odiFora,
+                      odiEmpate:row.odiEmpate,
+                      select:true
+
+                    }, row.id+"empate")}>
+                      <div>{row.odiEmpate}</div>
+                      <div>Empate</div>
+                    </Card>
+                    <Card key={row.id+"fora"} className={`card card${row.id}`} onClick={e=> handleClick(e, {
+                      id:row.id,
+                      option:row.id+"fora",
+                      hora:row.hora,
+                      casa: row.casa,
+                      fora: row.fora,
+                      odiCasa:row.odiFora,
+                      odiFora:row.odiFora,
+                      odiEmpate:row.odiEmpate,
+                      select:true
+
+                    }, row.id+"fora")}>
+                      <div>{row.odiFora}</div>
+                      <div>{row.fora}</div>
+                    </Card>
+                  </div>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 }
